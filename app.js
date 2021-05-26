@@ -29,6 +29,9 @@ const opciones = () => {
             console.log(`Valor: ${info.porcentaje}`.blue);
             break;
         case "guardar":
+            crearArchivo(info, pais, year)
+                .then((mensaje) => console.log(mensaje))
+                .catch((err) => console.log(err));
 
             break;
         default:

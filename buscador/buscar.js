@@ -104,24 +104,22 @@ const obtenerEstadisticas = async(codPais, anio, path) => {
 
 //=========  GUARDAR EN ARCHIVO JSON ================
 
-let estats = [];
-let crearArchivo = (datos, out) => {
+let crearArchivo = (datos, pais, anio) => {
     return new Promise((resolve, reject) => {
         if (!fs.existsSync(
                 "resultados")) {
             fs.mkdirSync(
                 "resultados");
         }
-        let valores = {
-            datos
-        }
-        estats.push(valores)
-        let data = JSON.stringify(estats)
-        fs.writeFile(`./data/${out}.json`, data, (err) => {
+        archivo = `Datos:	Personas que usan Internet (% de la población)\n`;
+        archivo += `Pais: ${datos.pais}\n`;
+        archivo += `Año: ${anio}\n`;
+        archivo += `Valor: ${datos.porcentaje}`
+        fs.writeFile(`resultados/${datos.codigo}-${anio}.txt`, archivo, (err) => {
             if (err)
-                reject(err);
+                reject(colors.red(err));
             else
-                resolve(`El archivo ${out}.json se ha guardado satisfactoriamente`);
+                resolve(`Archivo guardado exitosamente: resultados/${datos.codigo}-${anio}.txt`.green);
         });
     });
 };
