@@ -43,7 +43,7 @@ const vecAnio = async(anio) => {
 const limpiar = () => {
     vec = [];
     datosAnio.forEach((element) => {
-        if (paises.includes(element[2]) && ((element[0]) != "0") && ((element[0] != ""))) {
+        if (paises.includes(element[2])) {
             vec.push(element);
         }
     });

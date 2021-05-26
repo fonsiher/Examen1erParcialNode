@@ -6,7 +6,7 @@ const { obtenerEstadisticas, crearArchivo } = require("./buscador/buscar");
 //let comando = argv._[0]; // trae del objeto el comando alias
 let file = argv.file;
 let pais = argv.pais;
-let year = argv.year.toString();
+let year = argv.anio.toString();
 let x = 0
 
 let info;

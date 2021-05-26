@@ -10,7 +10,7 @@ const pais = {
     desc: 'Determinar el país a analizar a través de su código ISO 3166 ALPHA-3',
 }
 
-const year = {
+const anio = {
     default: 1960,
     alias: 'y',
     desc: 'Especificar el año para el cual se requiere las estadísticas',
@@ -19,8 +19,8 @@ const year = {
 
 const argv = require('yargs')
     // Establece la descripcion del comando que se tendrá que ejecutar a nivel de linea de consola
-    .command('mostrar', 'Imprimirá en pantalla el resultado de la búsqueda', { file, pais, year })
-    .command('guardar', 'Almacenará los resultados de las estadísticas en un archivo de texto', { file, pais, year })
+    .command('mostrar', 'Imprimirá en pantalla el resultado de la búsqueda', { file, pais, anio })
+    .command('guardar', 'Almacenará los resultados de las estadísticas en un archivo de texto', { file, pais, anio })
     .help()
     .argv;
 
